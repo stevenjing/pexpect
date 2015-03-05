@@ -1,0 +1,14 @@
+#homework 1
+newprimates = open ("primates2.nex", "w")
+oldprimates = open ("primates.nex").read())
+corrected = oldprimates.replace("mcmc","mcmp")
+newprimates.write(corrected)
+newprimates = open ("primates2.nex").read()
+newprimates.find("mcmp")
+newprimates = close ("primates2.nex")
+child = pexpect.spawn("mb -i primates2.nex")
+child.sendline(r"mcmcp") 
+child.sendline("no") 
+child.expect("MrBayes >")
+print child.before
+child.sendline("quit")
